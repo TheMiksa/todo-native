@@ -1,29 +1,44 @@
-import React, {useState} from "react";
-import {View, ScrollView} from "react-native";
+import React, {useState, useEffect} from "react";
+import {View, ScrollView, AsyncStorage} from "react-native";
 import {v4} from "uuid";
 import TodoItem from "../todo-item";
 import TodoInput from "../todo-input";
 
 export const TodoList = () => {
-    const [todoList, setTodoList] = useState([
-        {id: "f1f31d", text: "item1"},
-        {id: "f1f312", text: "item2"},
-        {id: "f1f313", text: "markup updatedmarkup updatedmarkup updatedmarkup updatedmarkup updatedmarkup updatedmarkup updatedmarkup updatedmarkup updatedmarkup updatedmarkup updated"}]);
+    const [todoList, setTodoList] = useState([]);
 
-    const setItem = (text) => {
+    useEffect(() => {
+        AsyncStorage.getItem("todoList")
+            .then((d) => {
+                const data = JSON.parse(d) || [];
+                if (data && (data.length !== todoList.length)) {
+                 setTodoList(data);
+                }
+            });
+    }, []);
+
+    const setItem = async (text) => {
         if (!text) return;
         const newItem = {
             id: v4(),
             text
         };
+        const newTodoList = JSON.parse(await AsyncStorage.getItem("todoList")) || [];
 
-        setTodoList((todoList) => [...todoList, newItem]);
+        newTodoList.push(newItem);
+        newTodoList && AsyncStorage.setItem("todoList", JSON.stringify(newTodoList));
+        setTodoList(newTodoList);
     };
+
     const removeItem = (id) => {
         const newTodoList = todoList.filter((el) => el.id !== id);
-        setTodoList(newTodoList);
-    }
-    console.log("rendered");
+        AsyncStorage.setItem("todoList", JSON.stringify(newTodoList))
+            .then(() => {
+                setTodoList(newTodoList);
+            });
+
+    };
+
     return (
         <View style={{width: "80%"}}>
             <TodoInput setItem={setItem}/>
