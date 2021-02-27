@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {TextInput, View, Button} from "react-native";
 
-export const TodoInput = () => {
+export const TodoInput = ({setItem}) => {
     const [val, setVal] = useState("");
     return (
         <View style={{flexDirection: "row"}}>
@@ -10,7 +10,7 @@ export const TodoInput = () => {
                        style={{backgroundColor: "olive", borderRadius: 5, width: 85}}
             />
             <Button
-                onPress={() => {}}
+                onPress={() => setItem(val)}
                 title="..."
                 color="#814"
                 accessibilityLabel="Learn more about this purple button"/>
