@@ -6,10 +6,10 @@ export const TodoList = () => {
     return (
         <View>
             <Text>Todo List</Text>
-            <TodoItem/>
-            <TodoItem/>
-            <TodoItem/>
-            <TodoItem/>
+            <TodoItem>TodoItem</TodoItem>
+            <TodoItem>TodoItem</TodoItem>
+            <TodoItem>TodoItem</TodoItem>
+            <TodoItem>TodoItem</TodoItem>
         </View>
     );
 };

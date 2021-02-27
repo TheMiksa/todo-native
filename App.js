@@ -3,6 +3,7 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import TodoList from "./src/components/todo-list";
 import Header from "./src/components/header";
+import TodoInput from "./src/components/todo-input";
 
 export default function App() {
     return (
@@ -11,7 +12,7 @@ export default function App() {
             <Header/>
             <View>
                 <TodoList/>
-
+                <TodoInput/>
             </View>
         </View>
     );
@@ -23,5 +24,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#2f2f3f',
         alignItems: 'center',
         justifyContent: 'center',
+        padding: 20
     },
 });
