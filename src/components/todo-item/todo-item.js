@@ -1,16 +1,39 @@
-import React, {useState} from "react";
-import {View, Text, StyleSheet} from "react-native";
+import React, {useState, useEffect} from "react";
+import {View, Text, StyleSheet, TouchableOpacity} from "react-native";
 import BtnDelete from "../btn-delete";
 import BtnStatus from "../btn-status";
 
 export const TodoItem = ({id, removeItem, children}) => {
     const [status, toggleStatus] = useState(false);
+    const [maxLength, setMaxLength] = useState(false);
+    const [shortForm, toggleShortForm] = useState(false);
+
+    useEffect(() => {
+            if (children.length >= 35) {
+                setMaxLength(true);
+                toggleShortForm(true);
+
+            }
+    }, []);
+
     return (
         <View style={styles.todoItem}>
-            <View style={{...styles.textBox,
-                backgroundColor: status ? "gold" :"#338"}}>
-                <Text>{children}</Text>
-            </View>
+            {maxLength ? (
+                <TouchableOpacity style={{...styles.textBox,
+                    backgroundColor: status ? "gold" :"#338"}}
+                                  onPress={() => {
+                                      if (children.length >= 35) {
+                                          toggleShortForm((val) => !val);
+                                      }
+                                  }}>
+                    <Text>{shortForm ? (children.slice(0, 34) + "...") : children}</Text>
+                </TouchableOpacity>
+            ) : (
+                <View style={{...styles.textBox,
+                    backgroundColor: status ? "gold" :"#338"}}>
+                    <Text>{children}</Text>
+                </View>
+            )}
             <View style={styles.btnBox}>
                 <BtnStatus toggleStatus={toggleStatus}/>
                 <BtnDelete id={id} removeItem={removeItem}/>

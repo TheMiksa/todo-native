@@ -21,6 +21,6 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "#2f2f3f",
         alignItems: "center",
-        padding: 20
+        padding: 20,
     },
 });
