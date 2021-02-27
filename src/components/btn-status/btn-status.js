@@ -13,7 +13,7 @@ export const BtnStatus = ({toggleStatus}) => {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: "#077",
-        height: 40,
+        height: "100%",
         width: "50%",
         flexDirection: "row",
         justifyContent: "center",

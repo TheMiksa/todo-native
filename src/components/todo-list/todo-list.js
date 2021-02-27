@@ -8,9 +8,10 @@ export const TodoList = () => {
     const [todoList, setTodoList] = useState([
         {id: "f1f31d", text: "item1"},
         {id: "f1f312", text: "item2"},
-        {id: "f1f313", text: "item3"}]);
+        {id: "f1f313", text: "markup updatedmarkup updatedmarkup updatedmarkup updatedmarkup updatedmarkup updatedmarkup updatedmarkup updatedmarkup updatedmarkup updatedmarkup updated"}]);
 
     const setItem = (text) => {
+        if (!text) return;
         const newItem = {
             id: v4(),
             text
@@ -26,7 +27,7 @@ export const TodoList = () => {
     return (
         <View style={{width: "80%"}}>
             <TodoInput setItem={setItem}/>
-            <ScrollView style={{maxHeight: "90%", width: "100%"}}>
+            <ScrollView style={{maxHeight: "88%", width: "100%"}}>
                 {
                     todoList && todoList.map(({id, text}) => (
                         <TodoItem key={id} id={id} removeItem={removeItem}>{text}</TodoItem>

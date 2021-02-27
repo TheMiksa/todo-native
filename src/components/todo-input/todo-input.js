@@ -11,7 +11,13 @@ export const TodoInput = ({setItem}) => {
         <View style={{flexDirection: "row", height: 35, width: "100%", marginBottom: 20, marginTop: 5}}>
             <TextInput onChangeText={(text) => setVal(text)}
                        value={val}
-                       style={{backgroundColor: "#99a", borderTopLeftRadius: 5, borderBottomLeftRadius: 5, width: "85%"}}
+                       style={{
+                           backgroundColor: "#99a",
+                           borderTopLeftRadius: 5,
+                           borderBottomLeftRadius: 5,
+                           width: "85%",
+                           paddingLeft: 5,
+                           color: "#266"}}
             />
             <TouchableOpacity
                 onPress={addItem}

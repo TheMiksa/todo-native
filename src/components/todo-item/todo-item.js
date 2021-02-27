@@ -9,12 +9,13 @@ export const TodoItem = ({id, removeItem, children}) => {
         <View style={styles.todoItem}>
             <View style={{
                 width: "70%",
-                height: 40,
+                minHeight: 40,
                 flexDirection: "row",
                 alignItems: "center",
                 backgroundColor: status ? "gold" :"#338",
                 borderTopLeftRadius: 5,
-                borderBottomLeftRadius: 5}}>
+                borderBottomLeftRadius: 5,
+                padding: 5}}>
                 <Text>{children}</Text>
             </View>
             <View style={styles.btnBox}>
@@ -29,9 +30,11 @@ const styles = StyleSheet.create({
     todoItem: {
         alignItems: "center",
         flexDirection: "row",
-        height: 40, width: "100%"},
+        minHeight: 40, width: "100%",
+        marginBottom: 8},
     btnBox: {
         width: "30%",
-        flexDirection: "row"
+        flexDirection: "row",
+        height: "100%"
     }
 });
