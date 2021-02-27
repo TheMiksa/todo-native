@@ -25,7 +25,6 @@ export const TodoList = () => {
     console.log("rendered");
     return (
         <View>
-            <Text>Todo List</Text>
             {
                 todoList && todoList.map(({id, text}) => (
                     <TodoItem key={id} id={id} removeItem={removeItem}>{text}</TodoItem>
