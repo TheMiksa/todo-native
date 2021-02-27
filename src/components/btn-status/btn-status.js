@@ -1,14 +1,24 @@
 import React from "react";
-import {Button} from "react-native";
+import {Button, StyleSheet, Text, TouchableOpacity} from "react-native";
 
 export const BtnStatus = ({toggleStatus}) => {
     return  (
-        <Button
-            onPress={() => toggleStatus((status) => !status)}
-            title="..."
-            color="#814"
-            accessibilityLabel="Learn more about this purple button"
-        />
+    <TouchableOpacity style={styles.container}
+                      onPress={() => toggleStatus((status) => !status)}>
+        <Text style={{color: "white"}}>!</Text>
+    </TouchableOpacity>
     );
 };
+
+const styles = StyleSheet.create({
+    container: {
+        backgroundColor: "#077",
+        height: 40,
+        width: "50%",
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center"}
+});
+
+
 

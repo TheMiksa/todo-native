@@ -9,9 +9,7 @@ export default function App() {
         <View style={styles.container}>
             <StatusBar style="auto" backgroundColor="olive"/>
             <Header/>
-            <View>
-                <TodoList/>
-            </View>
+            <TodoList/>
         </View>
     );
 }
@@ -19,9 +17,8 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#2f2f3f',
-        alignItems: 'center',
-        justifyContent: 'center',
+        backgroundColor: "#2f2f3f",
+        alignItems: "center",
         padding: 20
     },
 });

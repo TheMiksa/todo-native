@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {TextInput, View, Button} from "react-native";
+import {TextInput, View, Text, Button, TouchableOpacity} from "react-native";
 
 export const TodoInput = ({setItem}) => {
     const [val, setVal] = useState("");
@@ -8,16 +8,23 @@ export const TodoInput = ({setItem}) => {
         setVal("");
     };
     return (
-        <View style={{flexDirection: "row"}}>
+        <View style={{flexDirection: "row", height: 35, width: "100%", marginBottom: 20, marginTop: 5}}>
             <TextInput onChangeText={(text) => setVal(text)}
                        value={val}
-                       style={{backgroundColor: "olive", borderRadius: 5, width: 85}}
+                       style={{backgroundColor: "#99a", borderTopLeftRadius: 5, borderBottomLeftRadius: 5, width: "85%"}}
             />
-            <Button
+            <TouchableOpacity
                 onPress={addItem}
-                title="..."
-                color="#814"
-                accessibilityLabel="Learn more about this purple button"/>
+                style={{
+                    borderTopRightRadius: 5,
+                    borderBottomRightRadius: 5,
+                    width: "15%",
+                    backgroundColor: "#880",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    justifyContent: "center"}}>
+                <Text>Add</Text>
+            </TouchableOpacity>
         </View>
 
     );
