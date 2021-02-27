@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from "react";
-import {View, Text, SafeAreaView,ScrollView} from "react-native";
+import React, {useState} from "react";
+import {View, ScrollView} from "react-native";
 import {v4} from "uuid";
 import TodoItem from "../todo-item";
 import TodoInput from "../todo-input";

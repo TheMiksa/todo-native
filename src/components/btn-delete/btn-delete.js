@@ -1,5 +1,5 @@
-import React, {Fragment} from "react";
-import {Button, Text, TouchableOpacity, StyleSheet} from "react-native";
+import React from "react";
+import {Text, TouchableOpacity, StyleSheet} from "react-native";
 
 export const BtnDelete = ({id, removeItem}) => {
     return  (
