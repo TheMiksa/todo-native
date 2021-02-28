@@ -1,16 +1,15 @@
 import {StatusBar} from 'expo-status-bar';
 import React from 'react';
 import {StyleSheet, View, TouchableWithoutFeedback, Keyboard} from 'react-native';
-import TodoList from "./src/components/todo-list";
-import Header from "./src/components/header";
+import Home from "./src/components/home";
+
 
 export default function App() {
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
             <View style={styles.container}>
                 <StatusBar style="auto" backgroundColor="olive"/>
-                <Header/>
-                <TodoList/>
+                <Home/>
             </View>
         </TouchableWithoutFeedback>
     );

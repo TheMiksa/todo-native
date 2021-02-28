@@ -1,6 +1,4 @@
 {
-  "name": "todo-native",
-  "displayName": "todo-native",
   "expo": {
     "name": "todo-native",
     "slug": "todo-native",
@@ -9,6 +7,9 @@
       "**/*"
     ],
     "description": "",
-    "githubUrl": "https://github.com/TheMiksa/todo-native"
+    "githubUrl": "https://github.com/TheMiksa/todo-native",
+    "android": {
+      "package": "com.themiksa.todonative"
+    }
   }
 }
