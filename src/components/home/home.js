@@ -9,7 +9,6 @@ export const Home = () => {
         <View style={{position: "relative"}}>
             <Header/>
             <SettingsBtn/>
-            <Text>Some Text</Text>
             <TodoList/>
         </View>
     );
