@@ -1,12 +1,11 @@
 import React from "react";
-import {View, TouchableOpacity, Image} from "react-native";
-
+import {View, Image} from "react-native";
+import {Link} from "react-router-native";
 export const SettingsBtn = () => {
     return (
-        <TouchableOpacity style={{position: "absolute", right: -45, top: 20}}>
-            <View>
-                <Image style={{width: 30, height: 30}} source={require("../../images/settings.png")}/>
-            </View>
-        </TouchableOpacity>
+        <Link style={{position: "absolute", right: 0, top: 30, borderRadius: 20}} to={"/settings"}><View>
+            <Image style={{width: 30, height: 30}} source={require("../../images/settings.png")}/>
+        </View>
+        </Link>
     );
 };
